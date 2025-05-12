@@ -13,7 +13,7 @@ def run():
         return jsonify ({"mensaje":"No se recibieron datos"}),400
     try:
         result=subprocess.run(['python3','prueba.py'],capture_output=True, text=True)
-        if result.return.code==0:
+        if result.returncode==0:
             return jsonify({
                 "mensaje" : "Datos recibidos y script ejecutado",
                 "datos":data,
